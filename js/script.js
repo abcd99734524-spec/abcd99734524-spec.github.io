@@ -1688,7 +1688,7 @@ window.addEventListener("pageshow", syncVisibility);
 
 syncVisibility();
 })();
-// SCENE 3-B / STATE 01~02
+// SCENE 3-B / STATE 01~03
 (() => {
   const scene = document.querySelector("#scene-03-b");
   if (!scene) return;
@@ -1706,6 +1706,17 @@ syncVisibility();
   const appCount = scene.querySelector("#scene03b-app-count");
   const currentGoal = scene.querySelector("#scene03b-current-goal");
   const activityLog = scene.querySelector("#scene03b-activity-log");
+  const homeButton = scene.querySelector("#scene03b-message-home");
+
+if (!homeButton) {
+  console.warn("SCENE 3-B: 홈으로 돌아가기 버튼의 ID를 확인해주세요.");
+  return;
+}
+
+// 이전 단계에서 표시했던 비활성 안내를 제거합니다.
+homeButton.removeAttribute("aria-disabled");
+homeButton.removeAttribute("title");
+homeButton.disabled = false;
 
   if (
     !startButton ||
@@ -1798,7 +1809,43 @@ syncVisibility();
 
     // 홈으로 돌아가기는 다음 STATE에서 연결합니다.
   });
+// STATE 02 → STATE 03: 메시지에서 홈으로 돌아오기
+homeButton.addEventListener("click", () => {
+  if (
+    scene.hidden ||
+    !sceneIsActive ||
+    scene.dataset.state !== "message"
+  ) {
+    return;
+  }
 
+  scene.dataset.state = "home-returned";
+
+  messagePanel.hidden = true;
+  appGrid.hidden = false;
+
+  phoneLabel.textContent = "YOUR PHONE / HOME";
+
+  // 홈으로 돌아오는 것은 새 앱을 연 것으로 세지 않습니다.
+  appCount.textContent = "01";
+  appCount.setAttribute("aria-label", "열어 본 앱 1개");
+
+  currentGoal.textContent = "CHECK MESSAGE";
+  activityLog.hidden = false;
+
+  // 시작 버튼은 다시 실행하지 않습니다.
+  startButton.disabled = true;
+  setStartText("CHECKING...");
+
+  // 다른 앱 열기는 다음 STATE에서 연결합니다.
+  apps.forEach((app) => {
+    app.disabled = true;
+  });
+
+  // 사라지는 메시지 버튼 대신 홈 화면 제목으로 초점을 옮깁니다.
+  phoneLabel.setAttribute("tabindex", "-1");
+  phoneLabel.focus({ preventScroll: true });
+});
   function syncScene03bVisibility() {
     const visible = !scene.hidden;
 

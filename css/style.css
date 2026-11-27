@@ -2598,3 +2598,37 @@ select:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
   font: 700 clamp(12px, 0.9vw, 16px) / 1.6
     var(--mono, monospace);
 }
+/* 활성화된 홈 복귀 버튼 */
+#scene-03-b[data-state="message"]
+#scene03b-message-home:not(:disabled) {
+  cursor: pointer;
+}
+
+/* STATE 03에서도 시작 버튼은 진행 중 상태 유지 */
+#scene-03-b[data-state="home-returned"]
+.scene03b-start:disabled {
+  background: #dedede;
+  color: #777;
+  cursor: default;
+}
+
+/* STATE 03의 활동 기록 */
+#scene-03-b[data-state="home-returned"]
+#scene03b-activity-log {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #555;
+}
+
+#scene-03-b[data-state="home-returned"]
+.scene03b-log-entry {
+  margin: 10px 0 0;
+  font: 700 clamp(12px, 0.9vw, 16px) / 1.6
+    var(--mono, monospace);
+}
+
+/* 프로그램으로 이동한 홈 화면 제목의 초점 장식 제거 */
+#scene-03-b[data-state="home-returned"]
+#scene03b-phone-label:focus {
+  outline: none;
+}
