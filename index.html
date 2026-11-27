@@ -9,7 +9,10 @@
 <body>
   <header class="site-header">
     <p class="site-logo">TOO MUCH INFORMATION!</p>
-    <div class="scene-indicator"><span>SCENE 01 / 05</span><span class="menu-mark" aria-hidden="true"></span></div>
+  <div class="scene-indicator">
+  <span id="scene-number">SCENE 01 / 05</span>
+  <span class="menu-mark" aria-hidden="true"></span>
+</div>
   </header>
   <main class="digital-day-section" id="scene-01" data-state="initial">
     <div class="scene-layout">
@@ -79,6 +82,699 @@
     </div>
     <div class="scene-progress" role="progressbar" aria-label="전체 장면 진행" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1"><span></span></div>
   </main>
-  <script src="js/script.js"></script>
+
+  <!-- SCENE 02: 처음에는 숨김 -->
+  <section
+    id="scene-02"
+    class="incoming-section"
+    data-state="initial"
+    aria-labelledby="scene-02-title"
+    hidden
+  >
+<button
+  type="button"
+  class="scene02-back-button"
+  id="scene02-back-button"
+>
+  <span aria-hidden="true">←</span>
+  이전
+</button>
+  <div class="scene02-intro">
+      <p class="scene02-eyebrow">
+        02 / INCOMING INFORMATION
+      </p>
+
+      <h1 id="scene-02-title" tabindex="-1">
+        계속해서 들어오는 정보
+      </h1>
+
+      <p class="scene02-description">
+        하나의 일에 집중하려는 순간에도 새로운 정보는 계속 도착합니다.
+      </p>
+    </div>
+
+    <div class="scene02-layout">
+      <!-- 왼쪽: 읽기 패널 -->
+      <article
+        class="scene02-reading"
+        aria-labelledby="scene02-reading-title"
+      >
+        <div class="scene02-reading-header">
+          <span>READING / 01</span>
+          <span class="scene02-focus-mode">FOCUS MODE</span>
+        </div>
+<!-- STATE 02: 5초 후 표시되는 알림 -->
+<div
+  class="scene02-notification"
+  id="scene02-notification"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+  hidden
+>
+  <p class="scene02-notification-title">
+    새로운 메시지가 도착했습니다!
+  </p>
+
+  <p class="scene02-notification-description">
+    지금 확인하시겠어요?
+  </p>
+
+<button
+  type="button"
+  class="scene02-notification-button"
+  id="scene02-message-button"
+  >
+    <span>메시지 확인하기</span>
+    <span aria-hidden="true">↗</span>
+  </button>
+</div>
+<!-- STATE 03: 메시지 창 -->
+<section
+  class="scene02-message"
+  id="scene02-message"
+  aria-labelledby="scene02-message-heading"
+  hidden
+>
+  <div class="scene02-message-top">
+    <span class="scene02-chat-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M18.5 11.5a6.5 6.5 0 0 1-6.5 6.5H6l-3 2v-6a6.5 6.5 0 1 1 15.5-2.5Z"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linejoin="round"
+          transform="translate(2 -1) scale(.85)"
+        />
+      </svg>
+    </span>
+
+    <h3 id="scene02-message-heading" tabindex="-1">
+      NEW MESSAGE!
+    </h3>
+  </div>
+
+  <div class="scene02-message-body">
+    <div class="scene02-message-row">
+      <span class="scene02-message-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="32" fill="#90ccff"/>
+          <circle cx="32" cy="25" r="12" fill="#60b5f5"/>
+          <path
+            d="M9 64v-6c0-12 10-20 23-20s23 8 23 20v6Z"
+            fill="#60b5f5"
+          />
+        </svg>
+      </span>
+
+      <div class="scene02-message-copy">
+        <p class="scene02-message-sender">친구</p>
+        <p class="scene02-message-text">지금 뭐 하고 있어?</p>
+        <p class="scene02-message-subtext">
+          잠깐 얘기할 게 있는데!
+        </p>
+      </div>
+
+      <span class="scene02-message-time">지금</span>
+    </div>
+
+    <div class="scene02-message-bottom" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+<button
+  type="button"
+  class="scene02-message-return"
+  id="scene02-message-return"
+>
+    <span>읽고 돌아가기</span>
+    <span aria-hidden="true">↗</span>
+  </button>
+</section> 
+<h2 id="scene02-reading-title" tabindex="-1">
+          잠시 글을 읽어보세요.
+        </h2>
+
+        <p class="scene02-reading-text">
+          우리는 하루에도 수많은 정보를 마주합니다.
+          아침에 눈을 뜨자마자 확인하는 메시지부터 이동 중에 스쳐
+          지나가는 뉴스, 잠깐의 휴식 시간에 보는 영상까지.
+          스마트폰은 우리의 일상 곳곳에 자연스럽게 자리 잡고 있습니다.
+          때로는 하나의 일에 집중하려고 해도 새로운 정보가 끊임없이
+          도착합니다. 누군가 보낸 메시지, 새로운 게시물, 놓치고 싶지 않은
+          소식들은 우리의 시선을 잠시 다른 곳으로 이끕니다.
+          그렇게 잠깐 확인한 화면에서 우리는 또 다른 정보를 발견하고,
+          처음 하던 일로 돌아오기까지 몇 번의 화면을 더 지나가기도 합니다.
+        </p>
+
+        <div class="scene02-reading-footer">
+          <span>READING IN PROCESS</span>
+          <span>01 / 03</span>
+        </div>
+      </article>
+
+      <!-- 오른쪽: 주의 추적 패널 -->
+      <aside
+        class="scene02-tracker"
+        aria-labelledby="scene02-tracker-title"
+      >
+        <div>
+          <p class="scene02-tracker-label">
+            ATTENTION TRACKER / 01
+          </p>
+
+          <h2 id="scene02-tracker-title">
+            읽는 동안 무엇이 일어날까요?
+          </h2>
+
+          <p class="scene02-tracker-description">
+            잠시 글에 집중해보세요. 화면에 변화가 나타날 수 있습니다.
+          </p>
+        </div>
+<!-- 메시지를 확인하는 동안 표시 -->
+<div
+  class="scene02-current-focus"
+  id="scene02-current-focus"
+  hidden
+>
+  <p>CURRENT FOCUS</p>
+<div class="scene02-focus-item">
+  <span class="scene02-chat-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M18.5 11.5a6.5 6.5 0 0 1-6.5 6.5H6l-3 2v-6a6.5 6.5 0 1 1 15.5-2.5Z"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linejoin="round"
+        transform="translate(2 -1) scale(.85)"
+      />
+    </svg>
+  </span>
+
+  <span>MESSAGE</span>
+</div>
+</div>
+<!-- STATE 04: 주의 이동 기록 -->
+<div
+  class="scene02-attention-history"
+  id="scene02-attention-history"
+  hidden
+>
+  <ol class="scene02-history-list" aria-label="주의 이동 순서">
+    <li class="scene02-history-reading">01 / READING</li>
+    <li class="scene02-history-message">02 / MESSAGE</li>
+    <li class="scene02-history-reading">03 / READING</li>
+  </ol>
+
+  <p class="scene02-history-note">
+    알림 하나로, 우리의 주의는 한 번 이동했습니다.
+  </p>
+</div>
+        <div class="scene02-tracker-status">
+          <span>STATUS</span>
+          <span id="scene02-status">WAITING...</span>
+        </div>
+      </aside>
+    </div>
+<button
+  type="button"
+  class="scene02-next-button"
+  id="scene02-next-button"
+>
+  다음 장면으로 <span aria-hidden="true">↗</span>
+</button>
+    <!-- 기존 SCENE 2 CSS에 따라 40%로 표시 -->
+    <div
+      class="scene02-progress"
+      role="progressbar"
+      aria-label="전체 장면 진행"
+      aria-valuemin="0"
+      aria-valuemax="5"
+      aria-valuenow="2"
+    >
+      <span></span>
+    </div>
+  </section>
+<!-- SCENE 03-A: 초기 화면 -->
+<section
+  id="scene-03-a"
+  data-state="initial"
+  aria-labelledby="scene03a-title"
+  hidden
+>
+  <button
+    type="button"
+    class="scene03a-back"
+    id="scene03a-back"
+  >
+    ← 이전
+  </button>
+
+  <div class="scene03a-intro">
+    <p class="scene03a-eyebrow">
+      03-A / SHORT-FORM CONTENT
+    </p>
+
+    <h1 id="scene03a-title" tabindex="-1">
+      다음, 또 다음.
+    </h1>
+
+    <p class="scene03a-description">
+      짧은 영상들을 넘겨보세요. 어떤 장면이 기억에 남을까요?
+    </p>
+  </div>
+
+  <div class="scene03a-layout">
+    <!-- 왼쪽: 시청 완료 기록 -->
+    <aside class="scene03a-history" aria-label="시청 기록">
+      <div class="scene03a-history-header">
+        <span>WATCH HISTORY</span>
+        <span id="scene03a-history-count">00 / 05</span>
+      </div>
+
+      <ol class="scene03a-history-list">
+        <li data-content-index="0">01 EMPTY</li>
+        <li data-content-index="1">02 EMPTY</li>
+        <li data-content-index="2">03 EMPTY</li>
+        <li data-content-index="3">04 EMPTY</li>
+        <li data-content-index="4">05 EMPTY</li>
+      </ol>
+    </aside>
+
+   <!-- 가운데: 현재 콘텐츠 -->
+<div
+  class="scene03a-phone"
+  id="scene03a-phone"
+  tabindex="0"
+  role="group"
+  aria-label="콘텐츠 카드"
+  aria-describedby="scene03a-content-hint"
+>
+  <div
+    class="scene03a-screen"
+    id="scene03a-screen"
+    data-content-index="0"
+  >
+    <p
+      class="scene03a-content-number"
+      id="scene03a-content-number"
+      aria-live="polite"
+    >
+      CONTENT 01 / 05
+    </p>
+
+    <!-- 원형 아이콘 대신 영상을 표시할 영역 -->
+    <div class="scene03a-media">
+      <div
+        class="scene03a-video-host"
+        id="scene03a-video-host"
+      ></div>
+<button
+  type="button"
+  id="scene03a-play-button"
+  hidden
+  disabled
+>
+  영상 재생 ▶
+</button>
+      <p
+        class="scene03a-video-note"
+        id="scene03a-video-note"
+        role="status"
+      >
+        영상 준비 중입니다.
+      </p>
+
+      <a
+  class="scene03a-video-link"
+  id="scene03a-video-link"
+  href="https://www.youtube.com/watch?v=w0ffwDYo00Q"
+  target="_blank"
+  rel="noopener noreferrer"
+  hidden
+>
+  재생이 안 되나요? 유튜브에서 열기 ↗
+</a>
+    </div>
+
+    <div class="scene03a-content-footer">
+      <h2 id="scene03a-content-title">첫 번째 영상</h2>
+
+      <button
+        type="button"
+        class="scene03a-next-content"
+        id="scene03a-content-hint"
+      >
+        다음 콘텐츠 ↓
+      </button>
+    </div>
+  </div>
+</div>
+<!-- STATE 04: 기억 질문 -->
+<section
+  id="scene03a-memory"
+  aria-labelledby="scene03a-memory-title"
+  hidden
+>
+  <p class="scene03a-memory-label">MEMORY CHECK / 01</p>
+
+  <h2 id="scene03a-memory-title" tabindex="-1">
+    세 번째로 본 콘텐츠는 무엇이었나요?
+  </h2>
+
+  <p id="scene03a-memory-description">
+    기억나는 항목을 하나 선택해보세요.
+  </p>
+
+  <fieldset
+    class="scene03a-memory-options"
+    aria-labelledby="scene03a-memory-title"
+    aria-describedby="scene03a-memory-description"
+  >
+    <label class="scene03a-memory-option">
+      <input
+        type="radio"
+        name="scene03a-memory-answer"
+        value="cat"
+      >
+      <span>A. 고양이</span>
+    </label>
+
+    <label class="scene03a-memory-option">
+      <input
+        type="radio"
+        name="scene03a-memory-answer"
+        value="travel"
+      >
+      <span>B. 여행</span>
+    </label>
+
+    <label class="scene03a-memory-option">
+      <input
+        type="radio"
+        name="scene03a-memory-answer"
+        value="exercise"
+      >
+      <span>C. 운동</span>
+    </label>
+
+    <label class="scene03a-memory-option">
+      <input
+        type="radio"
+        name="scene03a-memory-answer"
+        value="music"
+      >
+      <span>D. 음악</span>
+    </label>
+  </fieldset>
+
+  <button
+    type="button"
+    id="scene03a-memory-submit"
+    disabled
+  >
+    결과 확인하기 →
+  </button>
+</section>
+
+<!-- STATE 05: 결과 패널과 다음 장면 안내 -->
+<div id="scene03a-result-area" hidden>
+  <section
+    class="scene03a-result-panel"
+    aria-labelledby="scene03a-result-title"
+  >
+    <p class="scene03a-result-label">RESULT REVEAL</p>
+
+    <h2 id="scene03a-result-title" tabindex="-1"></h2>
+
+    <div class="scene03a-result-card">
+      <span id="scene03a-result-icon" aria-hidden="true"></span>
+
+      <div>
+        <p id="scene03a-result-content-label"></p>
+        <h3 id="scene03a-result-content-title"></h3>
+      </div>
+    </div>
+
+    <div class="scene03a-result-explanation">
+      <h3>빠르게 지나간 정보는 얼마나 기억에 남았나요?</h3>
+      <p>
+        방금 본 다섯 개의 콘텐츠 중 세 번째 장면을 떠올려보았습니다.
+        이 체험의 정답 여부만으로 개인의 주의력이나 기억력을
+        판단할 수는 없습니다.
+      </p>
+    </div>
+  </section>
+
+<div class="scene03a-result-footer">
+  <button
+    type="button"
+    id="scene03a-result-next"
+  >
+    <span>다음 장면으로</span>
+    <span aria-hidden="true">↗</span>
+  </button>
+</div>
+</div>
+
+<!-- 오른쪽: 현재 표시 번호 -->
+    <aside class="scene03a-summary">
+      <p class="scene03a-summary-label">CONTENTS VIEWED</p>
+      <p class="scene03a-current-number" id="scene03a-current-number">
+        01
+      </p>
+
+      <div class="scene03a-summary-bottom">
+        <h2 id="scene03a-summary-title">KEEP SCROLLING!</h2>
+        <p id="scene03a-summary-description">
+          새로운 콘텐츠가 기다리고 있습니다.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <div
+    class="scene03a-progress"
+    role="progressbar"
+    aria-label="전체 장면 진행"
+    aria-valuemin="0"
+    aria-valuemax="5"
+    aria-valuenow="3"
+  >
+    <span></span>
+  </div>
+</section>
+<!-- SCENE 03-B: 초기 화면 -->
+<section
+  id="scene-03-b"
+  data-state="initial"
+  aria-labelledby="scene03b-title"
+  hidden
+>
+  <button
+    type="button"
+    id="scene03b-back"
+    class="scene03b-back"
+  >
+    ← 이전
+  </button>
+
+  <div class="scene03b-intro">
+    <p class="scene03b-eyebrow">
+      03-B / HABITUAL CHECKING
+    </p>
+
+    <h1 id="scene03b-title" tabindex="-1">
+      잠깐 확인하려고 했는데.
+    </h1>
+
+    <p class="scene03b-description">
+      친구의 메시지를 확인해보세요. 다른 앱들도 눈에 들어옵니다.
+    </p>
+  </div>
+
+  <div class="scene03b-layout">
+    <!-- 왼쪽: 원래 목적 -->
+    <aside
+      class="scene03b-purpose"
+      aria-labelledby="scene03b-purpose-title"
+    >
+      <p class="scene03b-panel-label">YOUR ORIGINAL PURPOSE</p>
+
+      <div class="scene03b-purpose-copy">
+        <h2 id="scene03b-purpose-title">
+          친구의 메시지 확인하기
+        </h2>
+
+        <p>친구에게 온 메시지를 확인해보세요.</p>
+      </div>
+
+      <button
+        type="button"
+        id="scene03b-start"
+        class="scene03b-start"
+        aria-disabled="true"
+        title="메시지 확인 기능은 다음 단계에서 연결합니다."
+      >
+        <span>START CHECKING</span>
+        <span aria-hidden="true">↗</span>
+      </button>
+    </aside>
+
+    <!-- 가운데: 가장 크게 배치할 체험 화면 -->
+    <div class="scene03b-phone" id="scene03b-phone">
+      <section
+        class="scene03b-screen"
+        id="scene03b-screen"
+        aria-label="스마트폰 홈 화면"
+      >
+        <p class="scene03b-phone-label" id="scene03b-phone-label">
+          YOUR PHONE / HOME
+        </p>
+
+        <div class="scene03b-app-grid" id="scene03b-app-grid">
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="message"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">💬</span>
+            <span>MESSAGE</span>
+          </button>
+
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="video"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">▶️</span>
+            <span>VIDEO</span>
+          </button>
+
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="social"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">📸</span>
+            <span>SOCIAL</span>
+          </button>
+
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="shop"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">🛍️</span>
+            <span>SHOP</span>
+          </button>
+
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="music"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">🎵</span>
+            <span>MUSIC</span>
+          </button>
+
+          <button
+            type="button"
+            class="scene03b-app"
+            data-app="web"
+            disabled
+          >
+            <span class="scene03b-app-icon" aria-hidden="true">🌐</span>
+            <span>WEB</span>
+          </button>
+        </div>
+        <!-- STATE 02: 메시지 화면 -->
+<section
+  id="scene03b-message"
+  aria-labelledby="scene03b-message-title"
+  hidden
+>
+  <div class="scene03b-chat-header">
+    <span class="scene03b-avatar" aria-hidden="true">👤</span>
+
+    <h2 id="scene03b-message-title" tabindex="-1">
+      친구
+    </h2>
+
+    <span class="scene03b-message-time">지금</span>
+  </div>
+
+  <div class="scene03b-chat-body">
+    <div class="scene03b-chat-bubble">
+      <p class="scene03b-chat-text">야 이거 봤어??</p>
+      <p class="scene03b-chat-subtext">너도 좋아할 것 같아서 보내!</p>
+
+      <div class="scene03b-shared-card">
+        <p>지금 SNS에서 난리난 맛집 TOP 5</p>
+        <span>친구가 공유한 콘텐츠</span>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    id="scene03b-message-home"
+    aria-disabled="true"
+    title="홈으로 돌아가기 기능은 다음 단계에서 연결합니다."
+  >
+    홈으로 돌아가기 ↗
+  </button>
+</section>
+      </section>
+    </div>
+
+    <!-- 오른쪽: 앱 사용 현황 -->
+    <aside
+      class="scene03b-activity"
+      aria-label="앱 사용 현황"
+    >
+      <p class="scene03b-panel-label">APP ACTIVITY</p>
+
+      <p
+        class="scene03b-activity-count"
+        id="scene03b-app-count"
+        aria-label="열어 본 앱 0개"
+      >
+        00
+      </p>
+
+      <p class="scene03b-small-label">APPS OPENED</p>
+
+      <div class="scene03b-goal">
+        <p class="scene03b-small-label">CURRENT GOAL</p>
+        <h2 id="scene03b-current-goal">CHECK MESSAGE</h2>
+      </div>
+      <div id="scene03b-activity-log" hidden>
+  <p class="scene03b-small-label">ACTIVITY LOG</p>
+  <p class="scene03b-log-entry">01 / MESSAGE</p>
+</div>
+    </aside>
+  </div>
+
+  <div
+    class="scene03b-progress"
+    role="progressbar"
+    aria-label="전체 장면 진행"
+    aria-valuemin="0"
+    aria-valuemax="5"
+    aria-valuenow="3"
+  >
+    <span></span>
+  </div>
+</section>
+<script src="js/script.js"></script>
 </body>
 </html>
